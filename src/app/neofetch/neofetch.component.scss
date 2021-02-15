@@ -1,0 +1,94 @@
+.cursor {
+	width: 10px;
+	height: 1.2rem;
+	background-color: #fff;
+	display: inline-block;
+	margin-bottom: -2px;
+}
+pre {
+	font-family: FuraCodeNerd;
+	font-weight: bold;
+	text-align: left;
+	margin: 0.5rem 0;
+}
+.neofetch {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.neofetch .left {
+	margin: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.left .social-buttons {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.social-buttons button {
+	margin: 0.5rem;
+	width: 100px;
+	height: 30px;
+  background-color: #ffffff00;
+  border: 1px solid #0094d4;
+  color: #0094d4;
+  cursor: pointer;
+  font-family: FuraCodeNerd;
+  font-weight: bold;
+}
+.neofetch .right {
+	margin: 1rem;
+}
+
+.neofetch .right {
+	margin: unset;
+}
+.right .right__header {
+	display: flex;
+	align-items: center;
+}
+.right .line {
+	height: 1px;
+	width: 100%;
+	background-color: #254f61;
+}
+
+.skillsets {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-bottom: 1rem;
+}
+.skillsets > * {
+	margin: 1rem 2rem;
+}
+
+/* large device */
+@media (min-width: 777px) {
+	.neofetch {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	.neofetch .left {
+		flex-direction: column;
+		align-self: flex-start;
+		flex: 1;
+	}
+	.left .social-buttons {
+		margin: 1rem;
+	}
+  .social-buttons button {
+    height: 40px;
+  }
+	.neofetch .right {
+		align-self: flex-start;
+		flex: 3;
+	}
+
+	.skillsets {
+		justify-content: flex-start;
+	}
+}

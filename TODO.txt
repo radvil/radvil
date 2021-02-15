@@ -1,0 +1,2 @@
+✔️ Make Konsole Color directive initialized
+[] Later, make color palette
