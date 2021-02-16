@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RadAvatar } from './avatar.component';
+
+import { RadCommonModule } from '../../common.module';
+import { RadAvatarComponent } from './avatar.component';
 import { RadAvatarDirective } from './avatar.directive';
-import { RadColorsModule } from '../../directives';
 
 @NgModule({
-  declarations: [RadAvatar, RadAvatarDirective],
-  imports: [CommonModule, RadColorsModule],
-  exports: [RadAvatar, RadAvatarDirective]
+  declarations: [RadAvatarComponent, RadAvatarDirective],
+  imports: [CommonModule, RadCommonModule],
+  exports: [RadAvatarComponent, RadAvatarDirective]
 })
 export class RadAvatarModule { }

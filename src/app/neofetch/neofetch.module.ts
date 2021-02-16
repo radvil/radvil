@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RadAvatarModule } from '../_shared/components';
-import { RadColorsModule } from '../_shared/directives'; // why should import ?
+import { RadCommonModule } from '../_shared/common.module';
 import { NeofetchComponent } from './neofetch.component';
 
 @NgModule({
   declarations: [NeofetchComponent],
   imports: [
     CommonModule,
-    RadColorsModule,
+    RadCommonModule,
     RadAvatarModule,
   ],
   exports: [

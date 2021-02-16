@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {CoreModule} from './_core/core.module';
 
-import { RadWindowModule } from './_shared/components';
+import { RadDockModule, RadWindowModule } from './_shared/components';
 import { AppComponent } from './app.component';
 import { NeofetchModule } from './neofetch/neofetch.module';
 
@@ -14,6 +14,7 @@ import { NeofetchModule } from './neofetch/neofetch.module';
     BrowserModule,
     CoreModule,
     RadWindowModule,
+    RadDockModule,
     NeofetchModule,
   ],
   providers: [],

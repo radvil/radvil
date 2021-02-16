@@ -3,4 +3,13 @@
     <rad-window-header>~:bash~ konsole</rad-window-header>
     <rad-neofetch></rad-neofetch>
   </rad-window>
+
+  <rad-dock radDockRound="1rem" dockTheme="dark">
+    <rad-dock-item
+      *ngFor="let item of appDockItems"
+      [dockItem]="item"
+      [isActive]="item.isActive"
+      [isDarken]="item.isDarken"
+    ></rad-dock-item>
+  </rad-dock>
 </div>

@@ -1,1 +1,0 @@
-export * from './colors/rad-colors.module';

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'rad-avatar',
@@ -9,11 +9,5 @@ import { Component, OnInit } from '@angular/core';
   `,
   styleUrls: ['./avatar.component.scss']
 })
-export class RadAvatar implements OnInit {
+export class RadAvatarComponent {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
