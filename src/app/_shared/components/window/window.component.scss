@@ -1,7 +1,6 @@
 .rad-window {
   font-size: 1.2rem;
-  max-width: 800px;
-  width: 100%;
+  width: 800px;
   background-color: #0e0e15ba;
   color: #eff0f1;
   box-shadow: 0px 3px 20px 3px #23232f73;
@@ -10,6 +9,13 @@
 .rad-window-content {
 	padding: 0 1rem;
 	height: 100%;
+}
+
+.resizer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: se-resize;
 }
 
 @media (min-width: 777px) {
