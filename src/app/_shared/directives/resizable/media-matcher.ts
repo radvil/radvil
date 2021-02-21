@@ -14,5 +14,6 @@ export function matchMedia(mediaQuery: string): MediaQueryList {
 }
 
 export function mediaIsMatched(mediaQuery: string): boolean {
+  console.log(matchMedia(mediaQuery));
   return matchMedia(mediaQuery).matches;
 }

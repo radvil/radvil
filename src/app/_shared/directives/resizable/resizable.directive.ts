@@ -23,7 +23,7 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
   constructor(
     private _elRef: ElementRef<HTMLElement>,
     private _renderer: Renderer2
-  ) {}
+  ) { }
 
   private _boxSize = new Size(50, 50);
   private _boxPosition = new Position(10, 10);
@@ -31,7 +31,7 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
     DirOption.SOUTH_EAST,
     DirOption.NORTH_WEST,
   ]);
-  private _handlers = {} as any;
+  private _handlerEls = {} as any;
   private _subscription = new Subscription();
 
   // example: { heigth: 100px, width: 700px };
@@ -98,30 +98,46 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
 
       handler.classList.add('rad-handler', direction);
       parentEl.appendChild(handler);
-      this._handlers[direction] = handler;
-      this._prepareHandlerEvent(this._handlers[direction]);
+      this._handlerEls[direction] = handler;
+      this._prepareHandlerEvent(direction);
     });
   }
 
-  private _prepareHandlerEvent(handler: HTMLElement) {
-    this.mousedown$ = fromEvent<MouseEvent>(handler, 'mousedown');
+  _onDragStyle(direction: string, event: MouseEvent): RadResizeStyle {
+    if (direction === 'se') {
+      this._boxSize.newWidth = event.clientX - this._boxPosition.left;
+      this._boxSize.newHeight = event.clientY - this._boxPosition.top;
+    }
+    else if (direction === 'ne') {
+      this._boxPosition.newTop = event.clientY;
+      this._boxSize.newHeight = event.clientY + this._boxSize.height - this._boxPosition.top;
+      // console.log(this._boxSize.height, this._boxPosition.top, event.clientY);
+      console.log(this._boxSize.height);
+      this._boxSize.newWidth = event.clientX - this._boxPosition.left;
+    }
+
+    const { height, width } = this._boxSize.valueInPixels;
+    const { top, left } = this._boxPosition.valueInPixels;
+    return { height, width, top, left };
+  }
+
+  private _prepareHandlerEvent(direction: string) {
+    this.mousedown$ = fromEvent<MouseEvent>(this._handlerEls[direction], 'mousedown');
     this.mousemove$ = fromEvent<MouseEvent>(document, 'mousemove');
     this.mouseup$ = fromEvent<MouseEvent>(document, 'mouseup');
 
     this._subscription.add(
       this.mousedown$
         .pipe(
+          tap(() => this._handlerDirections.activate(direction)),
           switchMap(() =>
             this.mousemove$.pipe(
               tap((event) => {
-                this._boxSize.newWidth = event.clientX - this._boxPosition.left;
-                this._boxSize.newHeight = event.clientY - this._boxPosition.top;
-
-                const { height, width } = this._boxSize.valueInPixels;
-                const { top } = this._boxPosition.valueInPixels;
+                const { height, width, top, left } = this._onDragStyle(direction, event);
                 this._makeStyles(this._elRef.nativeElement, {
                   height,
                   width,
+                  left,
                   top,
                 });
               }),

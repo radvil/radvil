@@ -24,9 +24,19 @@ export class Directions {
   }
 
   private _directions!: string[];
+  private _activatedDirection!: string;
 
   get value(): string[] {
     return this._directions;
+  }
+
+  get activatedDirection() {
+    return this._activatedDirection;
+  }
+
+  activate(direction: string) {
+    this._activatedDirection = direction;
+    console.log(this._activatedDirection);
   }
 
   setValue(values: string | string[]): void {
