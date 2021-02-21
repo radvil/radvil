@@ -1,29 +1,126 @@
+$handler-border-size: 7px;
+$handler-border-offset: -5px;
+
+$handler-corner-size: 12px;
+$handler-corner-offset: 0px;
+
 .rad-window {
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px 2px #6d6d6d73;
+  min-width: 200px;
+  min-height: 200px;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
   font-size: 1.2rem;
-  width: 800px;
-  background-color: #0e0e15ba;
   color: #eff0f1;
+  background-color: #0e0e15ba;
   box-shadow: 0px 3px 20px 3px #23232f73;
   backdrop-filter: blur(10px);
 }
-.rad-window-content {
-	padding: 0 1rem;
-	height: 100%;
+
+.rad-window--scrollable-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
 }
 
-.resizer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  cursor: se-resize;
-}
-
-@media (min-width: 777px) {
-  .rad-window {
-    border-radius: 0.5rem;
+.rad-scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
-  .rad-window-content {
-    max-height: 400px;
-    overflow-y: auto;
+}
+
+.rad-window--content {
+  min-height: 200px;
+}
+
+.rad-handler {
+  position: absolute;
+  height: 10px;
+  touch-action: none;
+
+  &.e {
+    cursor: e-resize;
+    width: $handler-border-size;
+    right: $handler-border-offset;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+  }
+
+  &.w {
+    cursor: w-resize;
+    width: $handler-border-size;
+    left: $handler-border-offset;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+  }
+
+  &.s {
+    cursor: s-resize;
+    height: $handler-border-size;
+    bottom: $handler-border-offset;
+    width: 100%;
+    left: 0;
+    background-color: transparent;
+  }
+
+  &.n {
+    cursor: n-resize;
+    height: $handler-border-size;
+    top: $handler-border-offset;
+    width: 100%;
+    left: 0;
+  }
+
+  &.se {
+    cursor: se-resize;
+    width: $handler-corner-size;
+    height: $handler-corner-size;
+    right: $handler-corner-offset;
+    bottom: $handler-corner-offset;
+    background-color: green;
+  }
+
+  &.sw {
+    cursor: sw-resize;
+    width: $handler-corner-size;
+    height: $handler-corner-size;
+    left: $handler-corner-offset;
+    bottom: $handler-corner-offset;
+    background-color: blue;
+  }
+
+  &.ne {
+    cursor: ne-resize;
+    width: $handler-corner-size;
+    height: $handler-corner-size;
+    right: $handler-corner-offset;
+    top: $handler-corner-offset;
+    background-color: yellow;
+  }
+
+  &.nw {
+    cursor: nw-resize;
+    width: $handler-corner-size;
+    height: $handler-corner-size;
+    left: $handler-corner-offset;
+    top: $handler-corner-offset;
+    background-color: orangered;
+  }
+}
+
+// SMALL DEVICES
+@media(max-width: 777px) {
+  .rad-window {
+    height: 100%;
+    width: 100%;
+    position: static;
   }
 }

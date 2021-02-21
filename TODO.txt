@@ -1,2 +1,4 @@
 ✔️ Make Konsole Color directive initialized
-[] Later, make color palette
+🥴 Later, make color palette
+🔥 Make Window component and resizable directive
+[] Handle all resize directions
