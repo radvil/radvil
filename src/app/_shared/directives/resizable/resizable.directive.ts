@@ -110,7 +110,25 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
     const prevWidth = this._boxSize.width;
     const prevHeight = this._boxSize.height;
 
-    if (direction === 'se') {
+    if (direction === 'n') {
+      if (this._boxSize.height > 200) {
+        this._boxPosition.newTop = event.clientY;
+      }
+      this._boxSize.newHeight = -prevHeight - event.clientY - prevY;
+    }
+    else if (direction === 's') {
+      this._boxSize.newHeight = event.clientY - prevY;
+    }
+    else if (direction === 'w') {
+      if (this._boxSize.width > 200) {
+        this._boxPosition.newLeft = event.clientX;
+      }
+      this._boxSize.newWidth = -prevWidth - event.clientX - prevX;
+    }
+    else if (direction === 'e') {
+      this._boxSize.newWidth = event.clientX - prevX;
+    }
+    else if (direction === 'se') {
       this._boxSize.newWidth = event.clientX - prevX;
       this._boxSize.newHeight = event.clientY - prevY;
     }
@@ -153,7 +171,6 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
       this.mousedown$
         .pipe(
           tap(() => this._handlerDirections.activate(direction)),
-          debounceTime(0),
           switchMap(() =>
             this.mousemove$.pipe(
               tap((event) => {

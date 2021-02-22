@@ -24,5 +24,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class RadWindow {
   public size = { height: 463, width: 755 };
   public position = { top: 50, left: 50 };
-  public directions = ['se', 'ne', 'nw', 'sw'];
+  public directions = ['n', 's', 'w', 'e', 'se'];
 }
