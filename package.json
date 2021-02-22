@@ -1,10 +1,6 @@
 {
   "name": "personal-landing",
   "version": "0.0.0",
-  "engines": {
-    "node": ">=12.20.0",
-    "npm": ">=6.13.0"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
