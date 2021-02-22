@@ -7,7 +7,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
-import { switchMap, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 import { Directions, RadDirection, RadDirectionsType, RadHandler } from './direction';
 import { BREAKPOINTS, mediaIsMatched } from './media-matcher';
@@ -115,17 +115,28 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
       this._boxSize.newHeight = event.clientY - prevY;
     }
     else if (direction === 'ne') {
-      this._boxPosition.newTop = event.clientY;
+      if (this._boxSize.height > 200) {
+        this._boxPosition.newTop = event.clientY;
+      }
       this._boxSize.newHeight = -prevHeight - event.clientY - prevY;
       this._boxSize.newWidth = event.clientX - prevX;
     }
     else if (direction === 'nw') {
-      // calc left and width
-      this._boxPosition.newLeft = event.clientX;
+      if (this._boxSize.width > 200) {
+        this._boxPosition.newLeft = event.clientX;
+      }
+      if (this._boxSize.height > 200) {
+        this._boxPosition.newTop = event.clientY;
+      }
       this._boxSize.newWidth = -prevWidth - event.clientX - prevX;
-      // calc top and height
-      this._boxPosition.newTop = event.clientY;
       this._boxSize.newHeight = -prevHeight - event.clientY - prevY;
+    }
+    else if (direction === 'sw') {
+      if (this._boxSize.width > 200) {
+        this._boxPosition.newLeft = event.clientX;
+      }
+      this._boxSize.newWidth = -prevWidth - event.clientX - prevX;
+      this._boxSize.newHeight = event.clientY;
     }
 
     const { height, width } = this._boxSize.valueInPixels;
@@ -142,6 +153,7 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
       this.mousedown$
         .pipe(
           tap(() => this._handlerDirections.activate(direction)),
+          debounceTime(0),
           switchMap(() =>
             this.mousemove$.pipe(
               tap((event) => {
