@@ -3,7 +3,7 @@ import { RadDockItem } from "./dock-item.interface";
 export const dockItems: RadDockItem[] = [
   {
     label: "Konsole",
-    description: "App's Konsole",
+    description: "whoami",
     iconPath: "assets/icons/dock/konsole-light.svg",
     isActive: true,
     isDarken: false
