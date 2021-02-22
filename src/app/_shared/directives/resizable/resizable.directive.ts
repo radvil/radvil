@@ -119,6 +119,14 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
       this._boxSize.newHeight = -prevHeight - event.clientY - prevY;
       this._boxSize.newWidth = event.clientX - prevX;
     }
+    else if (direction === 'nw') {
+      // calc left and width
+      this._boxPosition.newLeft = event.clientX;
+      this._boxSize.newWidth = -prevWidth - event.clientX - prevX;
+      // calc top and height
+      this._boxPosition.newTop = event.clientY;
+      this._boxSize.newHeight = -prevHeight - event.clientY - prevY;
+    }
 
     const { height, width } = this._boxSize.valueInPixels;
     const { top, left } = this._boxPosition.valueInPixels;
@@ -126,7 +134,6 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
   }
 
   private _prepareHandlerEvent(direction: RadDirection) {
-    // console.log(this._elRef.nativeElement.getBoundingClientRect());
     this.mousedown$ = fromEvent<MouseEvent>(this._handlerEls[direction], 'mousedown');
     this.mousemove$ = fromEvent<MouseEvent>(document, 'mousemove');
     this.mouseup$ = fromEvent<MouseEvent>(document, 'mouseup');
