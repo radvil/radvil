@@ -116,9 +116,7 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
     }
     else if (direction === 'ne') {
       this._boxPosition.newTop = event.clientY;
-      // height = 463;
-      // top = 50;
-      // console.log(prevHeight, event.clientY, prevY);
+      this._boxSize.newHeight = -prevHeight - event.clientY - prevY;
       this._boxSize.newWidth = event.clientX - prevX;
     }
 
