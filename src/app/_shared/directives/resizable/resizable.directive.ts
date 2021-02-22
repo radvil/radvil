@@ -9,11 +9,12 @@ import {
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { switchMap, takeUntil, tap } from 'rxjs/operators';
 
-import { Directions, DirOption, RadDirectionsType } from './direction';
+import { Directions, RadDirection, RadDirectionsType, RadHandler } from './direction';
 import { BREAKPOINTS, mediaIsMatched } from './media-matcher';
 import { Position, RadPosition } from './position';
 import { RadSize, Size } from './size';
 import { RadResizeStyle } from './style';
+
 
 @Directive({
   selector: '[radResizable]',
@@ -28,10 +29,10 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
   private _boxSize = new Size(50, 50);
   private _boxPosition = new Position(10, 10);
   private _handlerDirections = new Directions([
-    DirOption.SOUTH_EAST,
-    DirOption.NORTH_WEST,
+    RadDirection.SOUTH_EAST,
+    RadDirection.NORTH_WEST,
   ]);
-  private _handlerEls = {} as any;
+  private _handlerEls = {} as RadHandler;
   private _subscription = new Subscription();
 
   // example: { heigth: 100px, width: 700px };
@@ -93,7 +94,7 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
   }
 
   private _setHandlers(parentEl: HTMLElement): void {
-    this._handlerDirections.value.forEach((direction) => {
+    (this._handlerDirections.value as Array<RadDirection>).forEach((direction) => {
       const handler = this._renderer.createElement('div');
 
       handler.classList.add('rad-handler', direction);
@@ -104,16 +105,21 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
   }
 
   _onDragStyle(direction: string, event: MouseEvent): RadResizeStyle {
+    const prevX = this._boxPosition.left;
+    const prevY = this._boxPosition.top;
+    const prevWidth = this._boxSize.width;
+    const prevHeight = this._boxSize.height;
+
     if (direction === 'se') {
-      this._boxSize.newWidth = event.clientX - this._boxPosition.left;
-      this._boxSize.newHeight = event.clientY - this._boxPosition.top;
+      this._boxSize.newWidth = event.clientX - prevX;
+      this._boxSize.newHeight = event.clientY - prevY;
     }
     else if (direction === 'ne') {
       this._boxPosition.newTop = event.clientY;
-      this._boxSize.newHeight = event.clientY + this._boxSize.height - this._boxPosition.top;
-      // console.log(this._boxSize.height, this._boxPosition.top, event.clientY);
-      console.log(this._boxSize.height);
-      this._boxSize.newWidth = event.clientX - this._boxPosition.left;
+      // height = 463;
+      // top = 50;
+      // console.log(prevHeight, event.clientY, prevY);
+      this._boxSize.newWidth = event.clientX - prevX;
     }
 
     const { height, width } = this._boxSize.valueInPixels;
@@ -121,7 +127,8 @@ export class RadResizableDirective implements AfterViewInit, OnDestroy {
     return { height, width, top, left };
   }
 
-  private _prepareHandlerEvent(direction: string) {
+  private _prepareHandlerEvent(direction: RadDirection) {
+    // console.log(this._elRef.nativeElement.getBoundingClientRect());
     this.mousedown$ = fromEvent<MouseEvent>(this._handlerEls[direction], 'mousedown');
     this.mousemove$ = fromEvent<MouseEvent>(document, 'mousemove');
     this.mouseup$ = fromEvent<MouseEvent>(document, 'mouseup');
