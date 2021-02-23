@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RadWindow } from './window.component';
 import { RadWindowHeader } from './window-header/window-header.component';
-import { RadCommonModule } from '../../common.module';
+import { RadDragNResizeModule } from '../../directives/resizable/dragnresize.module';
 
 @NgModule({
   declarations: [RadWindow, RadWindowHeader],
   imports: [
     CommonModule,
-    RadCommonModule
+    RadDragNResizeModule
   ],
   exports: [RadWindow, RadWindowHeader],
 })
