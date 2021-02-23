@@ -6,7 +6,6 @@ $handler-corner-offset: 0px;
 
 .rad-window {
   border-radius: 10px;
-  box-shadow: 0px 2px 5px 2px #6d6d6d73;
   min-width: 200px;
   min-height: 200px;
   padding: 1rem;
@@ -17,8 +16,9 @@ $handler-corner-offset: 0px;
   font-size: 1.2rem;
   color: #eff0f1;
   background-color: #000000bb;
-  box-shadow: 0px 3px 20px 3px #18182073;
+  box-shadow: 0px 3px 20px 3px #00000087;
   backdrop-filter: blur(7px);
+  border: 1px solid #2f2f2f;
 }
 
 .rad-window--scrollable-container {
