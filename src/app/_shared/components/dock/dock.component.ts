@@ -13,7 +13,7 @@ export class RadDockComponent {
 
   @HostBinding('style.backgroundColor') get backgroundColor() {
     if (this.dockTheme === "light") return "#ffffffa6";
-    else if (this.dockTheme === 'dark') return "#0e0e15a6";
+    else if (this.dockTheme === 'dark') return "#000000bb";
     else return this.defaultBgColor;
   }
 }

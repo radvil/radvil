@@ -5,6 +5,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
     <div
       radResizable
+      radDraggable
       class="rad-window"
       [boxSize]="size"
       [boxPosition]="position"

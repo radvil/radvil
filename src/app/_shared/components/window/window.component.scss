@@ -16,9 +16,9 @@ $handler-corner-offset: 0px;
 
   font-size: 1.2rem;
   color: #eff0f1;
-  background-color: #0e0e15ba;
-  box-shadow: 0px 3px 20px 3px #23232f73;
-  backdrop-filter: blur(10px);
+  background-color: #000000bb;
+  box-shadow: 0px 3px 20px 3px #18182073;
+  backdrop-filter: blur(7px);
 }
 
 .rad-window--scrollable-container {
@@ -39,85 +39,8 @@ $handler-corner-offset: 0px;
   min-height: 200px;
 }
 
-.rad-handler {
-  position: absolute;
-  height: 10px;
-  touch-action: none;
-
-  &.e {
-    cursor: e-resize;
-    width: $handler-border-size;
-    right: $handler-border-offset;
-    height: 100%;
-    top: 0;
-    background-color: transparent;
-  }
-
-  &.w {
-    cursor: w-resize;
-    width: $handler-border-size;
-    left: $handler-border-offset;
-    height: 100%;
-    top: 0;
-    background-color: transparent;
-  }
-
-  &.s {
-    cursor: s-resize;
-    height: $handler-border-size;
-    bottom: $handler-border-offset;
-    width: 100%;
-    left: 0;
-    background-color: transparent;
-  }
-
-  &.n {
-    cursor: n-resize;
-    height: $handler-border-size;
-    top: $handler-border-offset;
-    width: 100%;
-    left: 0;
-  }
-
-  &.se {
-    cursor: se-resize;
-    width: $handler-corner-size;
-    height: $handler-corner-size;
-    right: $handler-corner-offset;
-    bottom: $handler-corner-offset;
-    background-color: green;
-  }
-
-  &.sw {
-    cursor: sw-resize;
-    width: $handler-corner-size;
-    height: $handler-corner-size;
-    left: $handler-corner-offset;
-    bottom: $handler-corner-offset;
-    background-color: blue;
-  }
-
-  &.ne {
-    cursor: ne-resize;
-    width: $handler-corner-size;
-    height: $handler-corner-size;
-    right: $handler-corner-offset;
-    top: $handler-corner-offset;
-    background-color: yellow;
-  }
-
-  &.nw {
-    cursor: nw-resize;
-    width: $handler-corner-size;
-    height: $handler-corner-size;
-    left: $handler-corner-offset;
-    top: $handler-corner-offset;
-    background-color: orangered;
-  }
-}
-
 // SMALL DEVICES
-@media(max-width: 777px) {
+@media (max-width: 777px) {
   .rad-window {
     height: 100%;
     width: 100%;

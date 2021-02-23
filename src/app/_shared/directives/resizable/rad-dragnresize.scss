@@ -1,0 +1,83 @@
+$handler-border-size: 7px;
+$handler-border-offset: -5px;
+
+$handler-corner-size: 12px;
+$handler-corner-offset: 0px;
+
+.rad-handler {
+  position: absolute;
+  height: 10px;
+  touch-action: none;
+
+  &.e {
+    cursor: e-resize;
+    width: $handler-border-size;
+    right: $handler-border-offset;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+  }
+
+  &.w {
+    cursor: w-resize;
+    width: $handler-border-size;
+    left: $handler-border-offset;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+  }
+
+  &.s {
+    cursor: s-resize;
+    height: $handler-border-size;
+    bottom: $handler-border-offset;
+    width: 100%;
+    left: 0;
+    background-color: transparent;
+  }
+
+  &.n {
+    cursor: n-resize;
+    height: $handler-border-size;
+    top: $handler-border-offset;
+    width: 100%;
+    left: 0;
+  }
+
+  &.se {
+    cursor: se-resize;
+    width: 15px;
+    height: 15px;
+    right: $handler-corner-offset;
+    bottom: $handler-corner-offset;
+    background: linear-gradient(to right, #09c6f9 0%, #045de9 100%);
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+  }
+
+  &.sw {
+    cursor: sw-resize;
+    width: $handler-corner-size;
+    height: $handler-corner-size;
+    left: $handler-corner-offset;
+    bottom: $handler-corner-offset;
+    background-color: transparent;
+  }
+
+  &.ne {
+    cursor: ne-resize;
+    width: $handler-corner-size;
+    height: $handler-corner-size;
+    right: $handler-corner-offset;
+    top: $handler-corner-offset;
+    background-color: transparent;
+  }
+
+  &.nw {
+    cursor: nw-resize;
+    width: $handler-corner-size;
+    height: $handler-corner-size;
+    left: $handler-corner-offset;
+    top: $handler-corner-offset;
+    background-color: transparent;
+  }
+}
