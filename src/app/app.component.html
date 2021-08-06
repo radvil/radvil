@@ -1,15 +1,22 @@
 <div class="shell">
-  <rad-window>
-    <rad-window-header>~:bash~ konsole</rad-window-header>
-    <rad-neofetch></rad-neofetch>
-  </rad-window>
+  <rax-window 
+    raxResizable
+    raxDraggable
+    class="rax-window"
+    [boxSize]="size"
+    [boxPosition]="position"
+    [handlerDirections]="directions"
+  >
+    <rax-window-header>~:bash~ konsole</rax-window-header>
+    <rax-neofetch></rax-neofetch>
+  </rax-window>
 
-  <rad-dock radDockRound="1rem" dockTheme="dark">
-    <rad-dock-item
+  <rax-dock raxDockRound="1rem" dockTheme="dark">
+    <rax-dock-item
       *ngFor="let item of appDockItems"
       [dockItem]="item"
       [isActive]="item.isActive"
       [isDarken]="item.isDarken"
-    ></rad-dock-item>
-  </rad-dock>
+    ></rax-dock-item>
+  </rax-dock>
 </div>

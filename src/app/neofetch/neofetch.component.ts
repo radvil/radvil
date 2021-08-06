@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rad-neofetch',
+  selector: 'rax-neofetch',
   templateUrl: './neofetch.component.html',
   styleUrls: ['./neofetch.component.scss']
 })

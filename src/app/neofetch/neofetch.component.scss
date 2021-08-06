@@ -10,45 +10,45 @@
 	flex-direction: column;
 	align-items: center;
 }
-.neofetch .left {
+.left {
 	margin: 2rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.left .social-buttons {
+.right {
+	margin: unset;
+	.right__header {
+		display: flex;
+		align-items: center;
+	}
+	.line {
+		height: 1px;
+		width: 100%;
+		background-color: #254f61;
+	}
+}
+.social-links {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+  margin-top: 1rem;
+	a {
+		margin: 0.5rem;
+		width: 100px;
+		height: 30px;
+		background-color: #ffffff00;
+		border: 1px solid #0094d4;
+		color: #0094d4;
+		cursor: pointer;
+		font-family: FuraCodeNerd;
+		font-weight: bold;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
-.social-buttons button {
-	margin: 0.5rem;
-	width: 100px;
-	height: 30px;
-  background-color: #ffffff00;
-  border: 1px solid #0094d4;
-  color: #0094d4;
-  cursor: pointer;
-  font-family: FuraCodeNerd;
-  font-weight: bold;
-}
-.neofetch .right {
-	margin: 1rem;
-}
-
-.neofetch .right {
-	margin: unset;
-}
-.right .right__header {
-	display: flex;
-	align-items: center;
-}
-.right .line {
-	height: 1px;
-	width: 100%;
-	background-color: #254f61;
-}
-
 .skillsets {
 	display: flex;
 	justify-content: center;
@@ -59,29 +59,24 @@
 .skillsets > * {
 	margin: 1rem 2rem;
 }
-
 /* large device */
 @media (min-width: 777px) {
 	.neofetch {
 		flex-direction: row;
 		align-items: flex-start;
 	}
-	.neofetch .left {
+	.left {
 		flex-direction: column;
 		align-self: flex-start;
 		flex: 1;
 	}
-	.left .social-buttons {
-		margin: 1rem;
-	}
-  .social-buttons button {
-    height: 40px;
-  }
-	.neofetch .right {
+	.right {
 		align-self: flex-start;
 		flex: 3;
 	}
-
+	.social-links a {
+		height: 40px;
+	}
 	.skillsets {
 		justify-content: flex-start;
 	}

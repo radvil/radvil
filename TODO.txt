@@ -1,12 +1,16 @@
-✔️ Make Konsole Color directive initialized
-🥴 Later, make color palette
-🔥 Make Window component and resizable directive
-✔️ Handle all resize directions
-✔️ Make Draggable directive
-🔥 Make Drag And Resize directive have their own module
+TODO:
+
+[✔️] Make Konsole Color directive initialized
+[🥴] Later, make color palette
+[🔥] Make Window component and resizable directive
+[✔️] Handle all resize directions
+[✔️] Make Draggable directive
+[🔥] Make Drag And Resize directive have their own module
 
 /**
-*
-* August 7th, 2021
+* === ==== ==== ==== ===== ==== ==== ==== ==== ===
+* === === === === August 7th, 2021 === === === ===
+* === ==== ==== ==== ===== ==== ==== ==== ==== ===
 */
 [✔️] Upgrade to Angular 12.2 Latest
+[] Rework project structure

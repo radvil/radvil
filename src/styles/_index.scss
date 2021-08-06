@@ -1,6 +1,7 @@
-@import './fonts.scss';
-@import './main.scss';
-@import '../app/_shared/directives/resizable/dragnresize.scss';
-@import '../app/_shared/directives/colors/colors.scss';
-@import '../app/_shared/directives/tooltip/tooltip.scss';
-@import './animations.scss';
+@import './fonts';
+@import './main';
+@import './animations';
+
+@import '../common/colors/colors';
+@import '../common/resizable/resizable';
+@import '../common/tooltip/tooltip';
