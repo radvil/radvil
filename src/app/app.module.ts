@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { RaxShellModule } from '@rax/materials';
 
-import { RaxShellModule } from 'src/components';
 import { CoreModule } from 'src/core/core.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';

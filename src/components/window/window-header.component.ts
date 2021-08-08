@@ -24,9 +24,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				margin: -1rem -1rem 0;
 				padding: 0.5rem 1rem;
 				font-family: Ubuntu;
+				background-color: #000000bb;
+				backdrop-filter: blur(7px);
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
 			}
 			.action-buttons {
 				max-width: 100px;
@@ -59,11 +62,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 			}
 			.right-icon {
 				cursor: pointer;
-			}
-			@media (min-width: 777px) {
-				:host {
-					border-radius: 0 0.5rem;
-				}
 			}
 		`,
 	],

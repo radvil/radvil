@@ -2,13 +2,6 @@
  * @originalAuthor https://github.com/bennadel
  *
  */
-export interface RaxSnowFlakeConfig {
-	depth: number;
-	left: number;
-	speed: number;
-}
-
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, NgModule, OnChanges } from '@angular/core';
 import { Component } from '@angular/core';
 
@@ -165,10 +158,3 @@ export class RaxSnowEffect implements OnChanges {
 		}
 	}
 }
-
-@NgModule({
-  imports: [CommonModule],
-  declarations: [RaxSnowEffect],
-  exports: [RaxSnowEffect]
-})
-export class RaxEffectModule {}

@@ -1,16 +1,20 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { RaxPositionConfig, RaxSizeConfig } from 'src/common';
-import { RaxDockService, RaxWindowConfig } from 'src/components';
-import { RaxSnowFlakeConfig } from 'src/components/effects';
+import {
+	RaxSizeConfig,
+	RaxDockService,
+	RaxWindowConfig,
+	RaxPositionConfig,
+  RaxSnowFlakeConfig,
+} from 'src/components';
 
 @Component({
 	selector: 'rax-desktop',
 	template: `
 		<div class="rax-desktop">
-      <rax-panel>
-        <rax-logo></rax-logo>
-      </rax-panel>
+			<rax-panel>
+				<rax-logo></rax-logo>
+			</rax-panel>
 
 			<ng-container *ngFor="let app of appWindows; index as i">
 				<ng-container

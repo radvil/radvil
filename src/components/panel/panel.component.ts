@@ -10,7 +10,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 				<div>current window available menu list here</div>
 			</div>
 
-			<span class="fx-spacer"></span>
+			<span class="rax-spacer"></span>
 
 			<div class="right">panel menu right here...</div>
 		</div>

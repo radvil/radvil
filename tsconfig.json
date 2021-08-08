@@ -19,7 +19,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@rax/materials": ["./src/components/index.ts"],
+      "@rax/common/*": ["./src/common/*"],
+      "@rax/core/*": ["./src/core/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
