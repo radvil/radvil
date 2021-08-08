@@ -53,22 +53,22 @@ export class RaxResizable implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     isMediaMatched(BREAKPOINTS.HANDSET)
-      ? this._initAsHandset()
-      : this._initAsDesktop();
+      ? this.initAsHandset()
+      : this.initAsDesktop();
   }
 
   ngOnDestroy(): void {
     this._subscription.unsubscribe();
   }
 
-  private _initAsHandset() {
+  private initAsHandset() {
     const resizableEl = this._elRef.nativeElement;
     this._renderer.setStyle(resizableEl, 'height', '100%');
     this._renderer.setStyle(resizableEl, 'width', '100%');
     this._renderer.setStyle(resizableEl, 'position', 'static');
   }
 
-  private _initAsDesktop(): void {
+  private initAsDesktop(): void {
     if (this.boxSize) {
       this._boxSize.update({
         height: this.boxSize.height,
@@ -89,8 +89,8 @@ export class RaxResizable implements AfterViewInit, OnDestroy {
     const { height, width } = this._boxSize.valueInPixels;
     const { top, left } = this._boxPosition.valueInPixels;
 
-    this._setHandlers(resizableBox);
-    this._makeStyles(resizableBox, {
+    this.setHandlers(resizableBox);
+    this.makeStyles(resizableBox, {
       height,
       width,
       left,
@@ -98,18 +98,18 @@ export class RaxResizable implements AfterViewInit, OnDestroy {
     } as RaxResizeStyle);
   }
 
-  private _setHandlers(parentEl: HTMLElement): void {
+  private setHandlers(parentEl: HTMLElement): void {
     (this._handlerDirections.value as Array<RaxDirection>).forEach((direction) => {
       const handler = this._renderer.createElement('div');
 
       handler.classList.add('rax-resize-handler', direction);
       parentEl.appendChild(handler);
       this._handlerEls[direction] = handler;
-      this._prepareHandlerEvent(direction);
+      this.prepareHandlerEvent(direction);
     });
   }
 
-  private _onDragStyle(direction: string, event: MouseEvent): RaxResizeStyle {
+  private onDragStyle(direction: string, event: MouseEvent): RaxResizeStyle {
     const prevX = this._boxPosition.left;
     const prevY = this._boxPosition.top;
     const prevWidth = this._boxSize.width;
@@ -167,7 +167,7 @@ export class RaxResizable implements AfterViewInit, OnDestroy {
     return { height, width, top, left };
   }
 
-  private _prepareHandlerEvent(direction: RaxDirection) {
+  private prepareHandlerEvent(direction: RaxDirection) {
     this.mousedown$ = fromEvent<MouseEvent>(this._handlerEls[direction], 'mousedown');
     this.mousemove$ = fromEvent<MouseEvent>(document, 'mousemove');
     this.mouseup$ = fromEvent<MouseEvent>(document, 'mouseup');
@@ -179,8 +179,8 @@ export class RaxResizable implements AfterViewInit, OnDestroy {
           switchMap(() =>
             this.mousemove$.pipe(
               tap((event) => {
-                const { height, width, top, left } = this._onDragStyle(direction, event);
-                this._makeStyles(this._elRef.nativeElement, {
+                const { height, width, top, left } = this.onDragStyle(direction, event);
+                this.makeStyles(this._elRef.nativeElement, {
                   height,
                   width,
                   left,
@@ -195,7 +195,7 @@ export class RaxResizable implements AfterViewInit, OnDestroy {
     );
   }
 
-  private _makeStyles(boxEl: HTMLElement, style: RaxResizeStyle): void {
+  private makeStyles(boxEl: HTMLElement, style: RaxResizeStyle): void {
     style.height && this._renderer.setStyle(boxEl, 'height', style.height);
     style.width && this._renderer.setStyle(boxEl, 'width', style.width);
     style.left && this._renderer.setStyle(boxEl, 'left', style.left);

@@ -13,4 +13,7 @@ TODO:
 * === ==== ==== ==== ===== ==== ==== ==== ==== ===
 */
 [✔️] Upgrade to Angular 12.2 Latest
-[] Rework project structure
+[✔️] Rework project structure
+[] Make RaxLogo Dynamic with content projection
+[] Refactor resize directive to use translateX/Y API instead
+[] Rework desktop canvas to be svg canvas instead

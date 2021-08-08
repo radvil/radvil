@@ -40,6 +40,9 @@ pre {
 .noScroll::-webkit-scrollbar {
   display: none;
 }
+.fx-spacer {
+  flex: 1 0 auto;
+}
 
 // large device
 @media (min-width: 777px) {

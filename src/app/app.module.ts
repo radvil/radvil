@@ -2,24 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
+import { RaxShellModule } from 'src/components';
 import { CoreModule } from 'src/core/core.module';
-import { RaxWindowModule, RaxDockModule } from 'src/components';
-import { RaxDraggableModule, RaxResizableModule } from 'src/common';
 import { AppComponent } from './app.component';
-import { NeofetchModule } from './neofetch/neofetch.module';
+import { AppRoutingModule } from './app.routing';
 
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
 		BrowserModule,
 		CommonModule,
+		AppRoutingModule,
 
 		CoreModule,
-		RaxDockModule,
-		NeofetchModule,
-		RaxWindowModule,
-    RaxResizableModule,
-    RaxDraggableModule,
+		RaxShellModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

@@ -36,7 +36,7 @@ export class Directions {
 
   activate(direction: RaxDirectionsType) {
     this._activatedDirection = direction;
-    console.log(this._activatedDirection);
+    // console.log(this._activatedDirection);
   }
 
   setValue(values: RaxDirectionsType): void {
