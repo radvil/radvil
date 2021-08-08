@@ -9,6 +9,7 @@ import {
   RaxEffectModule,
 	RaxResizableModule,
 	RaxDraggableModule,
+  RaxColorsModule,
 } from '@rax/materials';
 
 import { NeofetchModule } from '../neofetch/neofetch.module';
@@ -35,6 +36,7 @@ const routes: Routes = [
 		RaxResizableModule,
 		RaxDraggableModule,
 		RaxEffectModule,
+    RaxColorsModule,
 		NeofetchModule,
 	],
 })

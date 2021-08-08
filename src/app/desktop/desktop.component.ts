@@ -5,7 +5,7 @@ import {
 	RaxDockService,
 	RaxWindowConfig,
 	RaxPositionConfig,
-  RaxSnowFlakeConfig,
+	RaxSnowFlakeConfig,
 } from 'src/components';
 
 @Component({
@@ -28,13 +28,17 @@ import {
 					raxResizable
 					raxDraggable
 					[boxSize]="size"
+          windowType="terminal"
 					[boxPosition]="position"
 					[handlerDirections]="directions"
 				>
-					<rax-window-header>
+					<rax-window-header raxColorBg="transparent">
 						{{ app.windowTitle || '~:bash~ konsole' }}
 					</rax-window-header>
-					<rax-neofetch></rax-neofetch>
+
+					<rax-window-content>
+						<rax-neofetch></rax-neofetch>
+					</rax-window-content>
 				</rax-window>
 			</ng-template>
 

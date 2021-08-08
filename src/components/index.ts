@@ -21,7 +21,6 @@ export * from './panel/panel.component';
 export * from './panel/panel.module';
 
 export * from './theme/theme.module';
-export * from './wrapper/wrapper.module';
 
 export * from './draggable/draggable.directive';
 export * from './draggable/draggable.module';
