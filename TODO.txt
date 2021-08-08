@@ -18,7 +18,6 @@ TODO:
 [] Refactor resize directive to use translateX/Y API instead
 [] Rework desktop canvas to be svg canvas instead
 
-[] Rename branch "main" =>> "v1.0.0"
-[] Create new branch =>> "stable"
-[] Create new branch =>> "beta" =>> merge stable.
-[] Create new branch =>> "alpha" =>> merge beta.
+[✔️] Rename branch "main" =>> "v1.0.0"
+[✔️] Create new branch =>> "beta" =>> merge stable (For new feature test).
+[✔️] Create new branch =>> "alpha" =>> merge beta (For new feature dev).
