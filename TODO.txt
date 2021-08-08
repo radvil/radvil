@@ -17,3 +17,8 @@ TODO:
 [] Make RaxLogo Dynamic with content projection
 [] Refactor resize directive to use translateX/Y API instead
 [] Rework desktop canvas to be svg canvas instead
+
+[] Rename branch "main" =>> "v1.0.0"
+[] Create new branch =>> "stable"
+[] Create new branch =>> "beta" =>> merge stable.
+[] Create new branch =>> "alpha" =>> merge beta.
