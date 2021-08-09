@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, NgModule, OnChanges } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'rax-snow-effect',
+	selector: 'rax-snow-flake',
 	inputs: ['depth', 'speed'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
@@ -90,7 +90,7 @@ import { Component } from '@angular/core';
 		`,
 	],
 })
-export class RaxSnowEffect implements OnChanges {
+export class RaxSnowFlake implements OnChanges {
 	public depth = 1;
 	public speed = 1;
 

@@ -32,7 +32,7 @@ export class RaxLogo implements AfterViewInit {
 	) {}
 
 	@Input('imageUrl') imageUrl = 'assets/icons/debian.png';
-	@Input('imageHeight') imageHeight = 22;
+	@Input('imageHeight') imageHeight = 23;
 
 	ngAfterViewInit(): void {
 		const host = this.elRef.nativeElement;

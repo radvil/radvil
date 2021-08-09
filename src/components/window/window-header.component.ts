@@ -26,9 +26,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 				align-items: center;
 				padding: 0.5rem 1rem;
 				font-family: Ubuntu;
-				/* background-color: #000000bb;
-				backdrop-filter: blur(7px); */
-        /* background-color: transparent; */
 				border-top-left-radius: 10px;
 				border-top-right-radius: 10px;
 			}

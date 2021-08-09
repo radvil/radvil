@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-
 import {
 	RaxSizeConfig,
 	RaxDockService,
 	RaxWindowConfig,
 	RaxPositionConfig,
 	RaxSnowFlakeConfig,
-} from 'src/components';
+} from '@rax/materials';
 
 @Component({
 	selector: 'rax-desktop',
@@ -28,7 +27,7 @@ import {
 					raxResizable
 					raxDraggable
 					[boxSize]="size"
-          windowType="terminal"
+					windowType="terminal"
 					[boxPosition]="position"
 					[handlerDirections]="directions"
 				>
@@ -53,12 +52,17 @@ import {
 			</rax-dock>
 
 			<!-- snowflake desktop effect -->
-			<ng-template ngFor let-config [ngForOf]="snowFlakes">
-				<rax-snow-effect
+			<ng-template
+				ngFor
+				let-config
+				[ngForOf]="snowFlakesConfigs"
+				[ngForTrackBy]="trackByFn"
+			>
+				<rax-snow-flake
 					[depth]="config.depth"
 					[speed]="config.speed"
 					[style.left.vw]="config.left"
-				></rax-snow-effect>
+				></rax-snow-flake>
 			</ng-template>
 		</div>
 	`,
@@ -91,7 +95,7 @@ export class DesktopComponent {
 			windowTitle: '~:bash~ neofetch',
 		},
 	];
-	public snowFlakes!: RaxSnowFlakeConfig[];
+	public snowFlakesConfigs!: RaxSnowFlakeConfig[];
 
 	private generateSnowFlakeConfigs(): void {
 		const configs: RaxSnowFlakeConfig[] = [];
@@ -104,11 +108,15 @@ export class DesktopComponent {
 			});
 		}
 
-		this.snowFlakes = [...configs];
+		this.snowFlakesConfigs = [...configs];
 	}
 
 	private randomRange(min: number, max: number): number {
 		const range = max - min;
 		return min + Math.round(Math.random() * range);
+	}
+
+	trackByFn(index: number) {
+		return index;
 	}
 }
