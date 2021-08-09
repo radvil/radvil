@@ -2,18 +2,11 @@
  * @originalAuthor https://github.com/bennadel
  *
  */
-export interface RaxSnowFlakeConfig {
-	depth: number;
-	left: number;
-	speed: number;
-}
-
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, NgModule, OnChanges } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'rax-snow-effect',
+	selector: 'rax-snow-flake',
 	inputs: ['depth', 'speed'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
@@ -97,7 +90,7 @@ import { Component } from '@angular/core';
 		`,
 	],
 })
-export class RaxSnowEffect implements OnChanges {
+export class RaxSnowFlake implements OnChanges {
 	public depth = 1;
 	public speed = 1;
 
@@ -165,10 +158,3 @@ export class RaxSnowEffect implements OnChanges {
 		}
 	}
 }
-
-@NgModule({
-  imports: [CommonModule],
-  declarations: [RaxSnowEffect],
-  exports: [RaxSnowEffect]
-})
-export class RaxEffectModule {}

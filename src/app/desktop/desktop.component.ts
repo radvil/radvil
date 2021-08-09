@@ -1,16 +1,19 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-
-import { RaxPositionConfig, RaxSizeConfig } from 'src/common';
-import { RaxDockService, RaxWindowConfig } from 'src/components';
-import { RaxSnowFlakeConfig } from 'src/components/effects';
+import {
+	RaxSizeConfig,
+	RaxDockService,
+	RaxWindowConfig,
+	RaxPositionConfig,
+	RaxSnowFlakeConfig,
+} from '@rax/materials';
 
 @Component({
 	selector: 'rax-desktop',
 	template: `
 		<div class="rax-desktop">
-      <rax-panel>
-        <rax-logo></rax-logo>
-      </rax-panel>
+			<rax-panel>
+				<rax-logo></rax-logo>
+			</rax-panel>
 
 			<ng-container *ngFor="let app of appWindows; index as i">
 				<ng-container
@@ -24,13 +27,17 @@ import { RaxSnowFlakeConfig } from 'src/components/effects';
 					raxResizable
 					raxDraggable
 					[boxSize]="size"
+					windowType="terminal"
 					[boxPosition]="position"
 					[handlerDirections]="directions"
 				>
-					<rax-window-header>
+					<rax-window-header raxColorBg="transparent">
 						{{ app.windowTitle || '~:bash~ konsole' }}
 					</rax-window-header>
-					<rax-neofetch></rax-neofetch>
+
+					<rax-window-content>
+						<rax-neofetch></rax-neofetch>
+					</rax-window-content>
 				</rax-window>
 			</ng-template>
 
@@ -45,12 +52,17 @@ import { RaxSnowFlakeConfig } from 'src/components/effects';
 			</rax-dock>
 
 			<!-- snowflake desktop effect -->
-			<ng-template ngFor let-config [ngForOf]="snowFlakes">
-				<rax-snow-effect
+			<ng-template
+				ngFor
+				let-config
+				[ngForOf]="snowFlakesConfigs"
+				[ngForTrackBy]="trackByFn"
+			>
+				<rax-snow-flake
 					[depth]="config.depth"
 					[speed]="config.speed"
 					[style.left.vw]="config.left"
-				></rax-snow-effect>
+				></rax-snow-flake>
 			</ng-template>
 		</div>
 	`,
@@ -83,7 +95,7 @@ export class DesktopComponent {
 			windowTitle: '~:bash~ neofetch',
 		},
 	];
-	public snowFlakes!: RaxSnowFlakeConfig[];
+	public snowFlakesConfigs!: RaxSnowFlakeConfig[];
 
 	private generateSnowFlakeConfigs(): void {
 		const configs: RaxSnowFlakeConfig[] = [];
@@ -96,11 +108,15 @@ export class DesktopComponent {
 			});
 		}
 
-		this.snowFlakes = [...configs];
+		this.snowFlakesConfigs = [...configs];
 	}
 
 	private randomRange(min: number, max: number): number {
 		const range = max - min;
 		return min + Math.round(Math.random() * range);
+	}
+
+	trackByFn(index: number) {
+		return index;
 	}
 }

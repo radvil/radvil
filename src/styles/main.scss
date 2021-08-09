@@ -14,13 +14,6 @@ body {
   font-family: Ubuntu;
 }
 
-pre {
-	font-family: FuraCodeNerd;
-	font-weight: bold;
-	text-align: left;
-	margin: 0.5rem 0;
-}
-
 // scrollbar
 ::-webkit-scrollbar {
   width: 0.5rem;
@@ -39,9 +32,6 @@ pre {
 }
 .noScroll::-webkit-scrollbar {
   display: none;
-}
-.fx-spacer {
-  flex: 1 0 auto;
 }
 
 // large device

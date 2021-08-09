@@ -27,25 +27,25 @@ export class RaxColorTypography {
 
 @Directive({ selector: '[raxColorBg]' })
 export class RaxColorBackground {
-  @Input() raxColorBg: string = "";
+  @Input() raxColorBg: typeof GRADIENT_COLOR | string = "";
 
   @HostBinding('style.background') get background() {
     if (this.raxColorBg === COLOR.PRIMARY) {
       return GRADIENT_COLOR.PRIMARY;
     }
-    if (this.raxColorBg === COLOR.ACCENT) {
+    else if (this.raxColorBg === COLOR.ACCENT) {
       return GRADIENT_COLOR.ACCENT;
     }
-    if (this.raxColorBg === COLOR.WARN) {
+    else if (this.raxColorBg === COLOR.WARN) {
       return GRADIENT_COLOR.WARN;
     }
-    if (this.raxColorBg === COLOR.SUCCESS) {
+    else if (this.raxColorBg === COLOR.SUCCESS) {
       return GRADIENT_COLOR.SUCCESS;
     }
-    if (this.raxColorBg === COLOR.INFO) {
+    else if (this.raxColorBg === COLOR.INFO) {
       return GRADIENT_COLOR.INFO;
     }
-    if (this.raxColorBg === COLOR.DANGER) {
+    else if (this.raxColorBg === COLOR.DANGER) {
       return GRADIENT_COLOR.DANGER;
     }
     return this.raxColorBg || GRADIENT_COLOR.DEFAULT;
