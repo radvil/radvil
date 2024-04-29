@@ -2,14 +2,20 @@ import { Component } from "@angular/core";
 import {
   IconAngular,
   IconCss,
+  IconDocker,
+  IconFirebase,
   IconGit,
   IconHtml,
   IconJavascript,
+  IconMongodb,
+  IconNestjs,
+  IconNgrx,
+  IconNodejs,
+  IconPhotoshop,
+  IconRxjs,
+  IconSass,
   IconTux,
   IconTypescript,
-  IconNodejs,
-  IconMongodb,
-  IconPhotoshop,
 } from "@radvil/icon";
 import { UiGradientBgCmp, UiWindowCmp } from "@radvil/ui";
 
@@ -30,7 +36,13 @@ import { UiGradientBgCmp, UiWindowCmp } from "@radvil/ui";
     IconGit,
     IconNodejs,
     IconMongodb,
-    IconPhotoshop
+    IconPhotoshop,
+    IconDocker,
+    IconNestjs,
+    IconFirebase,
+    IconRxjs,
+    IconNgrx,
+    IconSass,
   ],
 })
 export class NeofetchCmp {}
