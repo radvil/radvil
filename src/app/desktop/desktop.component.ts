@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import {
-  RaxSizeConfig,
   RaxDockService,
   RaxWindowConfig,
-  RaxPositionConfig,
   RaxSnowFlakeConfig,
 } from "@rax/materials";
 
@@ -38,14 +36,7 @@ import {
       </ng-container>
 
       <ng-template #defaultAppTemplate let-app let-index="i">
-        <rax-window
-          raxResizable
-          raxDraggable
-          [boxSize]="size"
-          windowType="terminal"
-          [boxPosition]="position"
-          [handlerDirections]="directions"
-        >
+        <rax-window raxDraggable windowType="terminal">
           <rax-window-header raxColorBg="transparent">
             {{ app.windowTitle || "~:bash~ konsole" }}
           </rax-window-header>
@@ -88,8 +79,6 @@ export class DesktopComponent {
   }
 
   public appDockItems$ = this.dock.getDefaultItems();
-  public size: RaxSizeConfig = { height: 463, width: 755 };
-  public position: RaxPositionConfig = { top: 50, left: 50 };
   public directions = ["n", "s", "w", "e", "se"];
   public appWindows: RaxWindowConfig[] = [
     {
