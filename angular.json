@@ -126,6 +126,29 @@
           "defaultConfiguration": "production"
         }
       }
+    },
+    "@radvil/icon": {
+      "projectType": "library",
+      "root": "icon",
+      "sourceRoot": "icon/src",
+      "prefix": "icon",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "icon/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "icon/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "icon/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
     }
   }
 }
