@@ -1,54 +1,27 @@
-import { Directive, HostBinding, Input } from '@angular/core';
-import { GRADIENT_COLOR, COLOR } from './colors';
+import { Directive, HostBinding, Input } from "@angular/core";
+import { GRADIENT_COLOR, COLOR } from "./colors";
 
-@Directive({ selector: '[raxColor]' })
-export class RaxColorTypography {
-  @Input('raxColor') colorName = "";
+@Directive({
+  standalone: true,
+  selector: "[raxGradientBg]",
+})
+export class RaxGradientBg {
+  @Input() raxGradientBg: typeof GRADIENT_COLOR | string = "";
 
-  @HostBinding('style.color') get color() {
-    if (this.colorName === COLOR.PRIMARY) {
-      return "#00C69f";
-    }
-    else if (this.colorName === COLOR.ACCENT) {
-      return "#0094D4";
-    }
-    else if (this.colorName === COLOR.INFO) {
-      return "#f05033";
-    }
-    else if (this.colorName === COLOR.WARN) {
-      return "#DD0031";
-    }
-    else if (this.colorName === COLOR.DANGER) {
-      return "#FF0000";
-    }
-    return this.colorName || "#CCC";
-  }
-}
-
-@Directive({ selector: '[raxColorBg]' })
-export class RaxColorBackground {
-  @Input() raxColorBg: typeof GRADIENT_COLOR | string = "";
-
-  @HostBinding('style.background') get background() {
-    if (this.raxColorBg === COLOR.PRIMARY) {
+  @HostBinding("style.background") get background() {
+    if (this.raxGradientBg === COLOR.PRIMARY) {
       return GRADIENT_COLOR.PRIMARY;
-    }
-    else if (this.raxColorBg === COLOR.ACCENT) {
+    } else if (this.raxGradientBg === COLOR.ACCENT) {
       return GRADIENT_COLOR.ACCENT;
-    }
-    else if (this.raxColorBg === COLOR.WARN) {
+    } else if (this.raxGradientBg === COLOR.WARN) {
       return GRADIENT_COLOR.WARN;
-    }
-    else if (this.raxColorBg === COLOR.SUCCESS) {
+    } else if (this.raxGradientBg === COLOR.SUCCESS) {
       return GRADIENT_COLOR.SUCCESS;
-    }
-    else if (this.raxColorBg === COLOR.INFO) {
+    } else if (this.raxGradientBg === COLOR.INFO) {
       return GRADIENT_COLOR.INFO;
-    }
-    else if (this.raxColorBg === COLOR.DANGER) {
+    } else if (this.raxGradientBg === COLOR.DANGER) {
       return GRADIENT_COLOR.DANGER;
     }
-    return this.raxColorBg || GRADIENT_COLOR.DEFAULT;
+    return this.raxGradientBg || GRADIENT_COLOR.DEFAULT;
   }
-
 }

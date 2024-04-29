@@ -1,14 +1,21 @@
 import { Routes } from "@angular/router";
 
+export const APP_ROUTES = {
+  DESKTOP: "desktop",
+} as const;
+
+export type TAppRoutes = (typeof APP_ROUTES)[keyof typeof APP_ROUTES];
+
 export const appRoutes: Routes = [
   {
     path: "",
-    redirectTo: "desktop",
     pathMatch: "full",
+    redirectTo: APP_ROUTES.DESKTOP,
   },
   {
-    path: "desktop",
-    loadChildren: () =>
-      import("./desktop/desktop.module").then((m) => m.DesktopModule),
+    path: APP_ROUTES.DESKTOP,
+    loadComponent: async () => {
+      return (await import("./desktop/desktop.cmp")).DesktopCmp;
+    },
   },
 ];

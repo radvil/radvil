@@ -1,5 +1,4 @@
 @import '../components/colors/colors';
-@import '../components/tooltip/tooltip';
 
 :root {
 	$handler-border-size: 7px;
@@ -11,12 +10,13 @@
 .rax-spacer {
 	flex: 1 0 auto;
 }
+
 .rax-scrollable-container {
 	overflow-y: auto;
 	overflow-x: hidden;
 	min-height: 200px;
-	// height: 100%;
 }
+
 .rax-scrollbar-hidden {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
@@ -24,6 +24,7 @@
 		display: none;
 	}
 }
+
 pre {
 	font-family: FuraCodeNerd;
 	font-weight: bold;

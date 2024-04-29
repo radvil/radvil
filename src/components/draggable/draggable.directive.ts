@@ -14,6 +14,7 @@ interface HandlerStye {
 }
 
 @Directive({
+  standalone: true,
 	selector: '[raxDraggable]',
 	exportAs: 'raxDraggable',
 })

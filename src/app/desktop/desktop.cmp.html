@@ -1,0 +1,39 @@
+<rax-panel />
+
+@for(app of appWindows; track app.windowId) {
+<ng-container
+  [ngTemplateOutlet]="defaultAppTemplate"
+  [ngTemplateOutletContext]="{ $implicit: app, index: $index }"
+></ng-container>
+}
+
+<ng-template #defaultAppTemplate let-app let-index="i">
+  <rax-window raxDraggable windowType="terminal">
+    <rax-window-header raxGradientBg="transparent">
+      {{ app.windowTitle || "~:bash~ konsole" }}
+    </rax-window-header>
+    <rax-window-content>
+      <rax-neofetch></rax-neofetch>
+    </rax-window-content>
+  </rax-window>
+</ng-template>
+
+<!-- TODO: set dock item id -->
+<rax-dock raxDockRound="1rem" dockTheme="dark">
+  @for(item of appDockItems$ | async; track $index) {
+  <rax-dock-item
+    [dockItem]="item"
+    [isActive]="item.isActive"
+    [isDarken]="item.isDarken"
+  />
+  }
+</rax-dock>
+
+<!-- snowflake desktop effect -->
+@for(config of snowFlakesConfigs; track $index) {
+<rax-snow-flake
+  [depth]="config.depth"
+  [speed]="config.speed"
+  [style.left.vw]="config.left"
+/>
+}

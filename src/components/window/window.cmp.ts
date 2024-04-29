@@ -8,15 +8,20 @@ import {
 } from "@angular/core";
 
 @Component({
+  standalone: true,
   selector: "rax-window",
   template: `
     <ng-content select="rax-window-header"></ng-content>
     <ng-content></ng-content>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {
+        left: 5rem;
+        top: 5rem;
         resize: both;
+        width: 50svw;
         overflow: auto;
         position: relative;
         display: flex;
@@ -28,14 +33,8 @@ import {
       }
     `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RaxWindow implements AfterContentInit {
-  constructor(
-    private renderer: Renderer2,
-    private elementRef: ElementRef<HTMLElement>,
-  ) {}
-
+export class RaxWindowCmp implements AfterContentInit {
   @Input("windowType") windowStyle: "basic" | "terminal" = "basic";
 
   get host() {
@@ -48,4 +47,9 @@ export class RaxWindow implements AfterContentInit {
       this.renderer.setStyle(this.host, "background-color", "#000000bb");
     }
   }
+
+  constructor(
+    private renderer: Renderer2,
+    private elementRef: ElementRef<HTMLElement>,
+  ) {}
 }
