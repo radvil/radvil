@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "radvil": {
+    "web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -44,7 +44,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/radvil",
+            "outputPath": "dist/web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -88,10 +88,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "radvil:build:production"
+              "buildTarget": "web:build:production"
             },
             "development": {
-              "buildTarget": "radvil:build:development"
+              "buildTarget": "web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -99,28 +99,28 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "radvil:build"
+            "buildTarget": "web:build"
           }
         }
       }
     },
     "@radvil/ui": {
       "projectType": "library",
-      "root": "ui",
-      "sourceRoot": "ui/src",
+      "root": "@radvil/ui",
+      "sourceRoot": "@radvil/ui/src",
       "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "ui/ng-package.json"
+            "project": "@radvil/ui/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "ui/tsconfig.lib.prod.json"
+              "tsConfig": "@radvil/ui/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "ui/tsconfig.lib.json"
+              "tsConfig": "@radvil/ui/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -129,21 +129,21 @@
     },
     "@radvil/icon": {
       "projectType": "library",
-      "root": "icon",
-      "sourceRoot": "icon/src",
+      "root": "@radvil/icon",
+      "sourceRoot": "@radvil/icon/src",
       "prefix": "icon",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "icon/ng-package.json"
+            "project": "@radvil/icon/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "icon/tsconfig.lib.prod.json"
+              "tsConfig": "@radvil/icon/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "icon/tsconfig.lib.json"
+              "tsConfig": "@radvil/icon/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
