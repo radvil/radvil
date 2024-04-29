@@ -102,7 +102,7 @@ export class RaxDraggable implements AfterViewInit, OnDestroy {
 	}
 
 	private _setStyle(boxEl: HTMLElement, style: { [key: string]: any }): void {
-		style.left && this._rd.setStyle(boxEl, 'left', `${style.left}px`);
-		style.top && this._rd.setStyle(boxEl, 'top', `${style.top}px`);
+		style["left"] && this._rd.setStyle(boxEl, 'left', `${style["left"]}px`);
+		style["top"] && this._rd.setStyle(boxEl, 'top', `${style["top"]}px`);
 	}
 }

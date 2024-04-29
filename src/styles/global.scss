@@ -19,17 +19,21 @@ body {
   width: 0.5rem;
   border-radius: 2px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #f05033;
 }
+
 .noScroll {
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .noScroll::-webkit-scrollbar {
   display: none;
 }
