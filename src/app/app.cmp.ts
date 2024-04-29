@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { RaxShellCmp } from "@rax/materials";
+import { UiLayoutShellCmp } from "@radvil/ui";
 
 @Component({
   standalone: true,
   selector: "rax-root",
-  imports: [RaxShellCmp, RouterOutlet],
+  imports: [UiLayoutShellCmp, RouterOutlet],
   template: `
-    <rax-shell>
+    <ui-layout-shell>
       <router-outlet></router-outlet>
-    </rax-shell>
+    </ui-layout-shell>
   `,
 })
 export class AppCmp {}

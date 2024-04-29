@@ -1,12 +1,11 @@
 import { Component } from "@angular/core";
-import { RaxGradientBg } from "@rax/materials";
-import { RaxWindowCmp } from "src/components/window/window.cmp";
+import { UiGradientBgCmp, UiWindowCmp } from "@radvil/ui";
 
 @Component({
   standalone: true,
   selector: "rax-neofetch",
   templateUrl: "./neofetch.cmp.html",
   styleUrls: ["./neofetch.cmp.scss"],
-  imports: [RaxGradientBg, RaxWindowCmp],
+  imports: [UiGradientBgCmp, UiWindowCmp],
 })
 export class NeofetchCmp {}

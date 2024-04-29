@@ -2,8 +2,8 @@
 
 ## TO-DO(s)
 
-- [ ] Migrate all components to standalone components
-- [ ] Reconfigure all libs and projects structure
+- [x] Migrate all components to standalone components
+- [x] Reconfigure all libs and projects structure
 - [x] Use HTML/CSS native element resizing
 - [ ] Use builtin `@angular/cdk` for draggable components
 - [ ] Setup `tailwindcss`

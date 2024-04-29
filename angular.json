@@ -103,6 +103,29 @@
           }
         }
       }
+    },
+    "@radvil/ui": {
+      "projectType": "library",
+      "root": "ui",
+      "sourceRoot": "ui/src",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
     }
   }
 }

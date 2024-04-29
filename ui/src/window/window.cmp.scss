@@ -1,0 +1,14 @@
+:host {
+  left: 5rem;
+  top: 5rem;
+  resize: both;
+  width: 50svw;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: #eff0f1;
+  border: 1px solid #2f2f2f;
+  border-radius: 10px;
+}

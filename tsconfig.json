@@ -21,7 +21,8 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@rax/materials": ["./src/components/index.ts"],
+      // "@radvil/ui": ["./dist/radvil/ui"],
+      "@radvil/ui": ["./ui/src/public-api.ts"],
       "@rax/common/*": ["./src/common/*"],
       "@rax/core/*": ["./src/core/*"]
     }

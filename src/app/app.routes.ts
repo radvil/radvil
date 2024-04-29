@@ -15,7 +15,8 @@ export const appRoutes: Routes = [
   {
     path: APP_ROUTES.DESKTOP,
     loadComponent: async () => {
-      return (await import("./desktop/desktop.cmp")).DesktopCmp;
+      const factory = await import("./desktop/desktop.cmp");
+      return factory.DesktopCmp;
     },
   },
 ];

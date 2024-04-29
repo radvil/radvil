@@ -28,6 +28,7 @@
     "@angular/cli": "^17.3.2",
     "@angular/compiler-cli": "^17.3.0",
     "@ngrx/store-devtools": "^17.2.0",
+    "ng-packagr": "^17.3.0",
     "typescript": "~5.4.2"
   }
 }

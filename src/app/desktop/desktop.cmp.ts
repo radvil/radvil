@@ -7,19 +7,19 @@ import {
   signal,
 } from "@angular/core";
 import {
-  RaxDockCmp,
-  RaxDockItemCmp,
-  RaxDockService,
-  RaxDraggable,
-  RaxGradientBg,
-  RaxPanelCmp,
-  RaxSnowFlake,
-  RaxSnowFlakeConfig,
-  RaxWindowConfig,
-} from "@rax/materials";
-import { RaxWindowContentCmp } from "src/components/window/window-content.cmp";
-import { RaxWindowHeaderCmp } from "src/components/window/window-header.cmp";
-import { RaxWindowCmp } from "src/components/window/window.cmp";
+  UiDraggable,
+  UiDockPanelCmp,
+  UiDockPanelItemCmp,
+  UiGradientBgCmp,
+  UiDesktopPanelCmp,
+  UiSnowFlakeParticleCmp,
+  UiSnowFlakeParticleConfig,
+  UiWindowConfig,
+  UiWindowContentCmp,
+  UiWindowHeaderCmp,
+  UiWindowCmp,
+  UiDockPanelService,
+} from "@radvil/ui";
 import { NeofetchCmp } from "../neofetch/neofetch.cmp";
 
 @Component({
@@ -31,23 +31,23 @@ import { NeofetchCmp } from "../neofetch/neofetch.cmp";
   imports: [
     AsyncPipe,
     NgTemplateOutlet,
-    RaxSnowFlake,
-    RaxDockCmp,
-    RaxDockItemCmp,
-    RaxPanelCmp,
-    RaxDraggable,
-    RaxGradientBg,
-    RaxWindowCmp,
-    RaxWindowHeaderCmp,
-    RaxWindowContentCmp,
+    UiDraggable,
+    UiWindowCmp,
+    UiWindowHeaderCmp,
+    UiWindowContentCmp,
     NeofetchCmp,
+    UiDockPanelCmp,
+    UiDockPanelItemCmp,
+    UiGradientBgCmp,
+    UiDesktopPanelCmp,
+    UiSnowFlakeParticleCmp,
   ],
 })
 export class DesktopCmp implements OnInit {
   public appDockItems$ = this.dock.getDefaultItems();
-  public snowFlakesConfigs!: RaxSnowFlakeConfig[];
+  public snowFlakesConfigs!: UiSnowFlakeParticleConfig[];
   public directions = ["n", "s", "w", "e", "se"];
-  public appWindows: RaxWindowConfig[] = [
+  public appWindows: UiWindowConfig[] = [
     {
       windowId: "neofetch",
       windowTitle: "~:bash~ neofetch",
@@ -62,7 +62,7 @@ export class DesktopCmp implements OnInit {
   }
 
   private generateSnowFlakeConfigs(): void {
-    const configs: RaxSnowFlakeConfig[] = [];
+    const configs: UiSnowFlakeParticleConfig[] = [];
     for (let i = 1; i <= 77; i++) {
       configs.push({
         depth: this.randomRange(1, 5),
@@ -83,5 +83,5 @@ export class DesktopCmp implements OnInit {
     this.generateSnowFlakeConfigs();
   }
 
-  constructor(private dock: RaxDockService) {}
+  constructor(private dock: UiDockPanelService) {}
 }
