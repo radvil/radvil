@@ -4,5 +4,13 @@
   overflow: hidden;
   background-color: #333;
   background-size: cover;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 777px) {
+  :host {
+    display: block;
+  }
 }
