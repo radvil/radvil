@@ -3,22 +3,23 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostBinding,
-  OnInit,
+  inject,
   signal,
+  type OnInit,
 } from "@angular/core";
 import {
-  UiDraggable,
+  UiDesktopPanelCmp,
   UiDockPanelCmp,
   UiDockPanelItemCmp,
+  UiDockPanelService,
+  UiDraggable,
   UiGradientBgCmp,
-  UiDesktopPanelCmp,
   UiSnowFlakeParticleCmp,
-  UiSnowFlakeParticleConfig,
-  UiWindowConfig,
+  UiWindowCmp,
   UiWindowContentCmp,
   UiWindowHeaderCmp,
-  UiWindowCmp,
-  UiDockPanelService,
+  type UiSnowFlakeParticleConfig,
+  type UiWindowConfig,
 } from "@radvil/ui";
 import { NeofetchCmp } from "../neofetch/neofetch.cmp";
 
@@ -44,17 +45,16 @@ import { NeofetchCmp } from "../neofetch/neofetch.cmp";
   ],
 })
 export class DesktopCmp implements OnInit {
-  public appDockItems$ = this.dock.getDefaultItems();
+  readonly wallpaper = signal("url(assets/images/background.jpg)");
+  readonly dock = inject(UiDockPanelService);
+  readonly appDockItems$ = this.dock.getDefaultItems();
   public snowFlakesConfigs!: UiSnowFlakeParticleConfig[];
-  public directions = ["n", "s", "w", "e", "se"];
   public appWindows: UiWindowConfig[] = [
     {
       windowId: "neofetch",
       windowTitle: "~:bash~ neofetch",
     },
   ];
-
-  readonly wallpaper = signal("url(assets/images/background.jpg)");
 
   @HostBinding("style.background-image")
   get bgImage() {
@@ -82,6 +82,4 @@ export class DesktopCmp implements OnInit {
   ngOnInit(): void {
     this.generateSnowFlakeConfigs();
   }
-
-  constructor(private dock: UiDockPanelService) {}
 }

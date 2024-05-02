@@ -1,10 +1,11 @@
 import {
-  AfterContentInit,
+  type AfterContentInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   Input,
   Renderer2,
+  inject,
 } from "@angular/core";
 
 @Component({
@@ -18,6 +19,9 @@ import {
   `,
 })
 export class UiWindowCmp implements AfterContentInit {
+  protected renderer = inject(Renderer2);
+  protected elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
+
   @Input("windowType") windowStyle: "basic" | "terminal" = "basic";
 
   get host() {
@@ -30,9 +34,4 @@ export class UiWindowCmp implements AfterContentInit {
       this.renderer.setStyle(this.host, "background-color", "#000000bb");
     }
   }
-
-  constructor(
-    private renderer: Renderer2,
-    private elementRef: ElementRef<HTMLElement>,
-  ) {}
 }
