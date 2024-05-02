@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, input } from "@angular/core";
 import {
   IconAngular,
   IconCss,
@@ -18,6 +18,7 @@ import {
   IconTypescript,
 } from "@radvil/icon";
 import { UiGradientBgCmp, UiWindowCmp } from "@radvil/ui";
+import { LetDirective } from "@ngrx/component";
 
 @Component({
   standalone: true,
@@ -27,6 +28,7 @@ import { UiGradientBgCmp, UiWindowCmp } from "@radvil/ui";
   imports: [
     UiGradientBgCmp,
     UiWindowCmp,
+    LetDirective,
     IconAngular,
     IconJavascript,
     IconTypescript,
@@ -45,4 +47,6 @@ import { UiGradientBgCmp, UiWindowCmp } from "@radvil/ui";
     IconSass,
   ],
 })
-export class NeofetchCmp {}
+export class NeofetchCmp {
+  readonly iconHeight = input<number>(50);
+}
