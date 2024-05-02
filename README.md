@@ -1,14 +1,13 @@
-# Radvil
+# Intro
 
-## TO-DO(s)
+## ~$ whoami
 
-- [x] Migrate all components to standalone components
-- [ ] Reconfigure all libs and projects structure
-- [x] Use HTML/CSS native element resizing
-- [ ] Use builtin `@angular/cdk` for draggable components
-- [x] Setup `tailwindcss`
-- [x] Adjust `raxColor` directive after `tailwindcss`
-- [x] Setup `formatter` using `prettier` or `biome`
-- [x] Setup `linter` using `eslint` or `biome`
-- [ ] Install `@angular/material` version 3 and try to combine it with `tailwindcss`
-- [ ] Create a custom resize handler so we can monitor the resize even of a window to attach e.g custom effect on resizing
+Hi, my name is Radvil.
+
+Sorry to disappoint you but I'm only specialized
+in one thing in programming which is Front-End Web Development using Angular 2+ as my
+main framework of choice.
+
+I love colors but hate the 🌈. Cat's eyes in my favorite colors.
+
+You can reach me [here](https://radvil.netlify.app)
