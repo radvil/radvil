@@ -1,17 +1,11 @@
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-html {
+* {
   box-sizing: border-box;
-  font-size: 12px;
 }
 
+html,
 body {
+  font-size: 12px;
   margin: 0;
-  font-family: Ubuntu;
 }
 
 // scrollbar
@@ -38,13 +32,21 @@ body {
   display: none;
 }
 
+.text-hero {
+  @apply inline-block bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-purple-600;
+}
+
+.bg-hero {
+  @apply bg-gradient-to-r from-red-600 to-purple-600;
+}
+
 // large device
 @media (min-width: 777px) {
-	.shell {
-		overflow: hidden;
+  .shell {
+    overflow: hidden;
     height: 100vh;
-	}
-	.lg-dn {
-		display: none;
-	}
+  }
+  .lg-dn {
+    display: none;
+  }
 }

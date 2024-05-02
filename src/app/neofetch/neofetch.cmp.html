@@ -1,61 +1,65 @@
-<pre><span class="text-teal-400">radvil&#64;www:</span><span class="text-sky-500">~$ </span>whoami<div class="cursor blink"></div></pre>
+<div class="@container">
+  <pre><span class="text-teal-400">radvil&#64;www:</span><span class="text-sky-500">~$ </span>whoami<div class="cursor blink"></div></pre>
 
-<div class="neofetch">
-  <div
-    class="m-8 flex items-center justify-center lg:flex-col lg:self-start lg:flex-[1]"
-  >
+  <div app-id="neofetch" class="select-none @4xl:flex @4xl:items-start">
     <div
-      class="p-1 bg-white flex items-center justify-center rounded-full"
-      uiGradientBg="success"
+      class="p-8 flex flex-col items-center justify-center @4xl:self-start @4xl:flex-[1]"
     >
-      <img
-        class="rounded-full border-2 border-solid border-black object-cover size-44"
-        src="assets/images/portraits/photo.png"
-        alt="portrait"
-      />
-      <!-- <img src="assets/images/portraits/self.jpeg" alt="portrait" /> -->
+      <div
+        class="p-1 bg-white flex items-center justify-center rounded-full"
+        uiGradientBg="success"
+      >
+        <img
+          class="rounded-full border-2 border-solid border-black object-cover size-44"
+          src="assets/images/portraits/photo.png"
+          alt="portrait"
+        />
+        <!-- <img src="assets/images/portraits/self.jpeg" alt="portrait" /> -->
+      </div>
+      <p class="font-mono leading-7 mt-8 text-center first-letter:text-3xl first-letter:font-bold first-letter:text-teal-500">
+        Hi, my name is Radvil. Sorry to disappoint you but I'm only specialized
+        in one thing in programming which is
+        <span class="text-sky-500 font-bold">Front-End Web Development</span> using
+        <span class="text-hero font-bold uppercase">Angular 2+</span> as my
+        main framework of choice. I know some of backend technologies to use as my
+        stack, but I'm not very much proficient to it. But don't worry, if we
+        work together you'll be happy with my work.
+      </p>
     </div>
-    <div class="social-links">
-      <a href="https://www.facebook.com/radvilardian" target="_blank">
-        Facebook
-      </a>
-      <a href="https://www.linkedin.com/in/radvil" target="_blank">LinkedIn</a>
-      <a href="https://www.github.com/radvil" target="_blank">Github</a>
-    </div>
-  </div>
 
-  <div class="m-0 lg:self-start lg:flex-[3]">
-    <div class="flex items-center">
-      <div class="h-[1px] w-full bg-teal-900 lg:hidden"></div>
-      <pre><span uiGradientBg="primary">&#64;radvil</span></pre>
-      <div class="h-[1px] w-full bg-teal-900"></div>
-    </div>
+    <div class="m-0 @4xl:flex-[2]">
+      <div class="flex items-center">
+        <div class="h-[1px] w-full bg-yellow-500 @4xl:hidden"></div>
+        <pre><span uiGradientBg="accent" class="px-2 rounded-full text-black">&#64;whoami</span></pre>
+        <div class="h-[1px] w-full bg-orange-500"></div>
+      </div>
 
-    <pre><span class="text-teal-400">Name  : </span>Radvil Laode</pre>
-    <pre><span class="text-teal-400">Email : </span>radvil.phone&#64;gmail.com</pre>
-    <pre><span class="text-teal-400">Phone : </span>0821-9948-6969</pre>
-    <pre><span class="text-teal-400">Links : </span></pre>
-    <pre><span class="ml-8 text-sky-500">fb : </span>facebook.com/radvilardian</pre>
-    <pre><span class="ml-8 text-sky-500">li : </span>linkedin.com/radvil</pre>
-    <pre><span class="ml-8 text-sky-500">gt : </span>github.com/radvil</pre>
-    <pre><span class="text-teal-400">Skills: </span></pre>
-    <div class="skillsets" *ngrxLet="iconHeight() as h">
-      <icon-tux [style.height.px]="h" [style.color]="'#969696'" />
-      <icon-docker [style.height.px]="h" [style.color]="'#119ad4'" />
-      <icon-git [style.height.px]="h" [style.color]="'#f05033'" />
-      <icon-nodejs [style.height.px]="h" [style.color]="'#4bae4f'" />
-      <icon-nestjs [style.height.px]="h" [style.color]="'#d9224c'" />
-      <icon-mongodb [style.height.px]="h" [style.color]="'#13aa52'" />
-      <icon-firebase [style.height.px]="h" />
-      <icon-html [style.height.px]="h" [style.color]="'#f26651'" />
-      <icon-css [style.height.px]="h" [style.color]="'#389ad5'" />
-      <icon-sass [style.height.px]="h" [style.color]="'#c66394'" />
-      <icon-javascript [style.height.px]="h" [style.color]="'#f4e11e'" />
-      <icon-typescript [style.height.px]="h" [style.color]="'#0079cc'" />
-      <icon-angular [style.height.px]="h" [style.color]="'#db0030'" />
-      <icon-rxjs [style.height.px]="h" [style.color]="'#e32286'" />
-      <icon-ngrx [style.height.px]="h" [style.color]="'#412846'" />
-      <icon-photoshop [style.height.px]="h" [style.color]="'#0c0824'" />
+      <pre><span class="text-sky-400">Name  : </span>Radvil Laode</pre>
+      <pre><span class="text-sky-400">Email : </span>radvil.phone&#64;gmail.com</pre>
+      <pre><span class="text-sky-400">Phone : </span>0821-9948-6969</pre>
+      <pre><span class="text-sky-400">Links : </span></pre>
+      <pre><span class="ml-8 text-orange-500">fb : </span>facebook.com/radvilardian</pre>
+      <pre><span class="ml-8 text-orange-500">li : </span>linkedin.com/radvil</pre>
+      <pre><span class="ml-8 text-orange-500">gt : </span>github.com/radvil</pre>
+      <pre><span class="text-sky-400">Skills: </span></pre>
+      <div class="skillsets" *ngrxLet="iconHeight() as h">
+        <icon-tux [style.height.px]="h" [style.color]="'#969696'" />
+        <icon-docker [style.height.px]="h" [style.color]="'#119ad4'" />
+        <icon-git [style.height.px]="h" [style.color]="'#f05033'" />
+        <icon-nodejs [style.height.px]="h" [style.color]="'#4bae4f'" />
+        <icon-nestjs [style.height.px]="h" [style.color]="'#d9224c'" />
+        <icon-mongodb [style.height.px]="h" [style.color]="'#13aa52'" />
+        <icon-firebase [style.height.px]="h" />
+        <icon-html [style.height.px]="h" [style.color]="'#f26651'" />
+        <icon-css [style.height.px]="h" [style.color]="'#389ad5'" />
+        <icon-javascript [style.height.px]="h" [style.color]="'#f4e11e'" />
+        <icon-typescript [style.height.px]="40" [style.color]="'#0079cc'" />
+        <icon-angular [style.height.px]="h" [style.color]="'#db0030'" />
+        <icon-sass [style.height.px]="h" [style.color]="'#c66394'" />
+        <icon-rxjs [style.height.px]="h" [style.color]="'#e32286'" />
+        <icon-ngrx [style.height.px]="h" [style.color]="'#412846'" />
+        <icon-photoshop [style.height.px]="h" [style.color]="'#0c0824'" />
+      </div>
     </div>
   </div>
 </div>

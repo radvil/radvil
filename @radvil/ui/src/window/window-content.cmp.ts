@@ -14,6 +14,14 @@ import { Component } from "@angular/core";
         overflow-x: hidden;
         min-height: 200px;
       }
+
+      :host ::ng-deep {
+        > * {
+          display: block;
+          height: inherit;
+          width: inherit;
+        }
+      }
     `,
   ],
 })
