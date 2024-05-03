@@ -73,6 +73,14 @@ Capitalize the first letter
 v.capitalize("lion"); // Lion
 ```
 
+### string/isNotEmptyString
+
+Checks if a given value is a non-empty string.
+
+```typescript
+v.isNotEmptyString(""); // false
+```
+
 ### string/hasUnicode
 
 Check if given string values has some unicode chars
@@ -228,6 +236,15 @@ Return the iterator function of given value. Will throw if value is not an itera
 ```typescript
 v.getIterator(["a", "b"]); // Array Iterator {...}
 v.getIterator(8); // throw error "Invalid iterable type. Must be Iterable or AsyncIterable."
+```
+
+### collection/isNotEmptyArray
+
+Checks if a given value is a non-empty array.
+
+```typescript
+isNotEmptyArray([]); // false
+isNotEmptyArray([1, 2, 3]); // true
 ```
 
 ### collection/isArrayLike
