@@ -12,3 +12,4 @@
 - [x] Setup `linter` using `eslint` or `biome`
 - [ ] Install `@angular/material` version 3 and try to combine it with `tailwindcss`
 - [ ] Create a custom resize handler so we can monitor the resize even of a window to attach e.g custom effect on resizing
+- [ ] Better icons components

@@ -6,21 +6,6 @@
   margin-bottom: -2px;
 }
 
-.skillsets {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  padding-bottom: 1rem;
-}
-
-.skillsets > * {
+.skillset > * {
   margin: 1rem 2rem;
-}
-
-/* large device */
-@media (min-width: 777px) {
-  .skillsets {
-    justify-content: flex-start;
-  }
 }
