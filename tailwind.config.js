@@ -1,5 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-export const content = ["./src/**/*.{html,ts}"];
+export const content = [
+  "./@neo/ui/src/**/*.{html,ts}",
+  "./apps/playground/src/**/*.{html,ts}",
+  "./apps/radvil/src/**/*.{html,ts}",
+];
 export const theme = {
   extend: {},
   fontFamily: {
